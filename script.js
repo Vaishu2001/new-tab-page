@@ -1,3 +1,5 @@
+// C:\development\new-tab-page\index.html
+
 let getCurrentDateTime = () => { 
 	return new Date().toLocaleString()
 	};
@@ -17,3 +19,21 @@ let getCurrentDateTime = () => {
 			placeHolderText.style.display = 'none';
 		}
 	);
+
+
+	
+
+	 async function getHistoricalFact() {
+		 const historicalFact = await fetch('http://api.hiztory.org/date/event/09/24/api.xml')
+		 .catch(() => {
+			console.log('API Error');
+		  });
+		if(historicalFact) {
+			window.alert("Historical fact returned");
+			console.log("---------------");
+			console.log(historicalFact);
+			console.log("---------------");
+		}
+	
+
+	 }
