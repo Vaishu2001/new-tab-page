@@ -49,7 +49,7 @@ Work in progress
 
 This project is meant to be used as web browser home page or new tab page.
 
-Hosted on github pages: https://www.alane019.github.io/new-tab-page/
+Hosted on github pages: https://alane019.github.io/new-tab-page/
 
 ##  Features ##
 
