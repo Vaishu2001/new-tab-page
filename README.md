@@ -52,7 +52,7 @@ This project is meant to be used as web browser home page or new tab page.
 ##  Features ##
 
 - [x]  Displays current time
-- [ ]  Displays "this day in history" factoid.
+- [x]  Displays "this day in history" factoid.
 - [ ]  Enter web url to an image to display as page background.
 
 ##  Technologies ##
