@@ -49,6 +49,8 @@ Work in progress
 
 This project is meant to be used as web browser home page or new tab page.
 
+Hosted on github pages: https://www.alane019.github.io/new-tab-page/
+
 ##  Features ##
 
 - [x]  Displays current time
@@ -62,8 +64,9 @@ The following tools were used in this project:
 - [JavaScript](https://www.ecma-international.org/task-groups/tc39-tg1/)
 - [HTML](https://html.spec.whatwg.org/multipage/)
 - [CSS](https://www.w3.org/Style/CSS/Overview.en.html)
-- [DOM](w3.org/TR/2004/NOTE-DOM-Level-3-XPath-20040226/)
-	https://www.w3.org/TR/1998/REC-DOM-Level-1-19981001/
+- [Fetch API](https://fetch.spec.whatwg.org/)
+- [DOM API](https://www.w3.org/TR/1998/REC-DOM-Level-1-19981001/)
+	
 
 ##  Requirements ##
   • `none`
