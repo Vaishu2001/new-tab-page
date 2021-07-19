@@ -66,6 +66,7 @@ The following tools were used in this project:
 - [CSS](https://www.w3.org/Style/CSS/Overview.en.html)
 - [Fetch API](https://fetch.spec.whatwg.org/)
 - [DOM API](https://www.w3.org/TR/1998/REC-DOM-Level-1-19981001/)
+- [Bootstrap](https://getbootstrap.com/)
 	
 
 ##  Requirements ##
