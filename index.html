@@ -4,35 +4,184 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/5.0.2/lux/bootstrap.min.css" integrity="sha512-JQH/PgL2GI/QRtL8+26f9MUeF1nvl/wI7vBiHSvZdD6PRLu3/wOlVDOF0k/QLfV5kU8rmuDeFoJ2gPIT0qlDmQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	
+	<title>On this day in history</title>
 
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
-		<link href="https://fonts.googleapis.com/css2?family=Rambla&display=swap" rel="stylesheet" />
+		<!-- CSS -->
+		<style>
+			#factoid-text{
+				font-weight: 600;
+    			line-height: 1.1;
+				font-size: 2rem;
 
-	<link rel="stylesheet" href="./styles.css" />
-	<title>New tab</title>
-	<script src="date-time.js" defer> </script>
+			}
+			
 
+			body {
+			backdrop-filter: hue-rotate(189deg) blur(5px) opacity(0.5);
+			
+			}
+
+			html{
+			/* font-family:'Rambla', sans-serif, Arial, Helvetica, sans-serif; */
+			letter-spacing: 1.35px;
+
+					background: #317660;
+				background: -webkit-linear-gradient(bottom, rgba(255, 227, 104, 0.911), rgba(115, 174, 151, 0.5));
+				background: -moz-linear-gradient(bottom, rgba(255, 227, 104, 0.911), rgba(115, 174, 151, 0.5));
+				background: linear-gradient(to top, rgba(255, 227, 104, 0.911), rgba(115, 174, 151, 0.5));
+			font-family: DOS, Monaco, Menlo, Consolas, "Courier New", monospace;
+
+			}
+
+			body{
+			background-color: rgba(251,251,251,0.51) ;
+			/* backdrop-filter: blur(20px); */
+			height: 100vh;
+			margin: 0px;
+			padding: 25px;
+
+			}
+
+			#datetime{
+			color: white !important;
+			}
+
+			#header{
+			background-color: gray; 
+			color: white;
+			padding: 15px;
+			}
+
+
+			hr{
+			border: #051937 solid .25px;
+			opacity: 0.25;
+			}
+			.placeholder-text{
+			margin-top: 15px;
+			opacity: 0.5;
+			}
+			#editarea{
+			padding: 15px;
+			}
+			#editarea:focus{
+			box-shadow: #d6860c8d 0 0 6px 3px;
+			}
+
+			/* animation */
+			.animated {
+			background-repeat: no-repeat;
+			-webkit-animation-duration: 2s;
+			animation-duration: 2s;
+			-webkit-animation-fill-mode: both;
+			animation-fill-mode: both;
+			}
+
+			@-webkit-keyframes fadeIn {
+			0% {opacity: 0;}
+			100% {opacity: 1;}
+			}
+
+			@keyframes fadeIn {
+			0% {opacity: 0;}
+			100% {opacity: 1;}
+			}
+
+			.fadeIn {
+			-webkit-animation-name: fadeIn;
+			animation-name: fadeIn;
+			}
+			
+		</style>
 </head>
 <body>
-		<h1 id="datetime"> &nbsp; </h1>
+	<h1 id="datetime" class="animated fadeIn"> &nbsp; </h1>
 	<hr />  
-		<h1 id="history-factoid"> &nbsp; <span style="font-variant: small-caps"> content ☺ <!-- this-day-in-history-api goes here --> </span> </h1>
-	<hr />  
-		<div id="editarea" style="max-height: 1000px;" overflow='auto'; contenteditable='true'> 
-			<div>
-				<div contenteditable='false'> Notes: </div>
-					<div class="placeholder-text"> <i>add notes here  </i></div>
-					<div id="para-container">
-					
-						<!-- text container elements placed here -->
-						<p> &nbsp;</p>
+		<div class="card border-secondary mb-3" style="max-width: 50rem;">
+			<div class="card-header">
+				<h1 id="history-factoid"> &nbsp; <span style="font-variant: small-caps">
+					 On this day in history<!-- this-day-in-history-api goes here --> 
+					</span> </h1>
+			</div>
+			<div class="card-body">
+			   <div class="card-title">	
+					<div> <span id="year-label"> On <span id="month-name"></span>
+					<span id="day-number"></span>, in the year </span>
+					<span id="year-data"></span> ... 
 					</div>
-					<p> &nbsp;</p>
+				</div>
+				<div id="factoid-text" class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
+				</div>
 			</div>
 		</div>
 
+		<hr />  
 
+		<div id="editarea" overflow='auto'; contenteditable='true'> 
+			<div>
+				<div contenteditable='false'> Notes: </div>
+					<div class="placeholder-text"> <i> You can jot down temprorary notes here. </i></div>
+					<p> &nbsp;</p>
+			</div>
+			<div>
+					<p> &nbsp;</p>
+			</div>
 
+		</div>
+	<link rel="stylesheet" href="./assets/css/styles.css" />
+
+	<!-- JAVASCRIPT -->
+	<script>
+		
+		let dateToday = new Date();
+		// dateToday.month()
+		let monthNum = dateToday.getMonth() + 1;
+		let dateNum = dateToday.getDate();
+
+		let url = `https://history.muffinlabs.com/date/${monthNum}/${dateNum}`
+
+		let monthName = dateToday.toLocaleString('default', {month: 'long'});
+		let monthNameElem = document.getElementById("month-name");
+		monthNameElem.innerHTML = monthName;
+		let dayNumElem = document.getElementById("day-number");
+		dayNumElem.innerHTML = dateNum;
+
+		let getCurrentDateTime = () => { 
+			return new Date().toLocaleString()
+			};
+
+			window.setInterval(() => {
+					let currentDateTime = getCurrentDateTime();
+					let timeElem =  document.getElementById("datetime");
+					timeElem.innerHTML = currentDateTime;
+				}, 1000
+			);
+
+			let editArea = document.getElementById("editarea");
+			editArea.addEventListener(
+				'click',
+				() => { 
+					let placeHolderText = document.querySelector(".placeholder-text"); 
+					placeHolderText.style.display = 'none';
+				}
+			);
+
+		let historyFactoid; 
+		let setHistoryFactoid = function(factoidYear, factoidText) {
+			let factoidYearDiv = document.getElementById("year-data")
+			factoidYearDiv.innerHTML = factoidYear
+			let factoidTextDiv = document.getElementById("factoid-text");
+			factoidTextDiv.innerHTML = factoidText;
+		}
+			
+
+		fetch(url)
+			.then((res) => {return res.json()  })
+			.then((result) => { return result.data.Events[0]})
+			.then((result) => {setHistoryFactoid(result.year, result.text)})
+
+	</script>
 </body>
 </html>
