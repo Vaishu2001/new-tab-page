@@ -181,15 +181,23 @@
 					box-shadow: #d6860c8d 0 0 6px 3px;
 				}
 
-				/* animation */
-				.animated {
-					background-repeat: no-repeat;
-					-webkit-animation-duration: 2s;
-					animation-duration: 2s;
-					-webkit-animation-fill-mode: both;
-					animation-fill-mode: both;
+				
+				#notes-label {
+					font-weight: 700 !important;
 				}
 
+				.container {
+					background-color: #05193732;
+					padding: 50px;
+					padding-top: 10px;
+					padding-bottom: 175px;
+				}
+
+				.card {
+					box-shadow: rgba(76, 76, 76, 0.1) 1px 1px 4px 3px !important;
+				}
+
+				/* fade-in animation  - - - - - - - - - - -  */
 				@-webkit-keyframes fadeIn {
 					0% {
 						opacity: 0;
@@ -209,24 +217,18 @@
 				}
 
 				.fadeIn {
-					-webkit-animation-name: fadeIn;
-					animation-name: fadeIn;
+					-webkit-animation-name: fadeIn !important;
+					animation-name: fadeIn !important;
 				}
 
-				#notes-label {
-					font-weight: 700 !important;
+				.animated {
+					background-repeat: no-repeat !important;
+					-webkit-animation-duration: 3s !important;
+					animation-duration: 3s !important;
+					-webkit-animation-fill-mode: both !important;
+					animation-fill-mode: both !important;
 				}
 
-				.container {
-					background-color: #05193732;
-					padding: 50px;
-					padding-top: 10px;
-					padding-bottom: 175px;
-				}
-
-				.card {
-					box-shadow: rgba(76, 76, 76, 0.1) 1px 1px 4px 3px !important;
-				}
 			</style>
 		</div>
 	</body>
