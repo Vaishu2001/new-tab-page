@@ -20,10 +20,8 @@
 			<hr />
 
 			<div class="card border-secondary mb-3">
-				<!-- style="max-width: 50rem; box-shadow: 1px 1px 4px 3px" -->
-			
 				<div class="card-header">
-					<h1 id="history-factoid">
+					<h1 id="history-fact">
 						&nbsp;
 						<span style="font-variant: small-caps">
 							On this day in history
@@ -32,15 +30,15 @@
 				</div>
 				<div class="card-body">
 					<div class="card-title">
-						<div>
-							<span id="year-label">
-								On <span id="month-name"></span> <span id="day-number"></span>,
-								in the year
-							</span>
-							<span id="year-data"></span>…
+						<div> On <span id="month-name"></span> <span id="day-number"> </span>,
+								throughout history…
+						</span>
+							<span id="history-data"> </span>
 						</div>
 					</div>
-					<div id="factoid-text" class="card-text"></div>
+					<div id="fact-text" class="card-text">
+						<ul id="fact-text-ul"> </ul>
+					</div>
 				</div>
 			</div>
 
@@ -72,6 +70,7 @@
 				monthNameElem.innerHTML = monthName;
 				let dayNumElem = document.getElementById("day-number");
 				dayNumElem.innerHTML = dateNum;
+				let dateMonthDay = `${monthNum}/${dateNum}`
 
 				let getCurrentDateTime = () => {
 					return new Date().toLocaleString();
@@ -89,34 +88,36 @@
 					placeHolderText.style.display = "none";
 				});
 
-				let historyFactoid;
-				let setHistoryFactoid = function (factoidYear, factoidText) {
-					let factoidYearDiv = document.getElementById("year-data");
-					factoidYearDiv.innerHTML = factoidYear;
-					let factoidTextDiv = document.getElementById("factoid-text");
-					factoidTextDiv.innerHTML = factoidText;
-				};
-
 				fetch(url)
 					.then((res) => {
 						return res.json();
 					})
 					.then((result) => {
-						return result.data.Events[0];
+						return result.data.Events;
 					})
 					.then((result) => {
-						setHistoryFactoid(result.year, result.text);
+						//make the list descending order;
+						result.reverse();
+						result.forEach((eventObject, index) => {
+							let factTextDiv = document.getElementById("fact-text-ul");
+							factTextDiv.innerHTML = factTextDiv.innerHTML + ` <li id="text-${index}">
+							<span class="li-year">${monthNum}/${dateNum}/${eventObject.year}</span>:  ${eventObject.text}   </li> `;
+							//setHistoryFact(item.year, item.text);
+						});
 					});
 			</script>
 
 			<!-- CSS - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 			<style>
-				#factoid-text {
-					font-weight: 600;
+				#fact-text {
+					font-weight: 400;
 					line-height: 1.1;
-					font-size: 1.6rem;
+					font-size: 1rem;
 				}
 
+				.li-year{
+					font-weight: bold;
+				}
 				html {
 					letter-spacing: 1.35px;
 					background: #317660;
@@ -195,6 +196,15 @@
 
 				.card {
 					box-shadow: rgba(76, 76, 76, 0.1) 1px 1px 4px 3px !important;
+				}
+
+				li{
+					border: #00000000 solid 1px;
+					padding: 6px 3px;
+					margin: 10px 2px;
+					box-shadow: #454b364d 0 0 5px 1px;
+					background-color: #f8f2b517;
+					list-style: none;
 				}
 
 				/* fade-in animation  - - - - - - - - - - -  */
