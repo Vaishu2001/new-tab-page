@@ -39,7 +39,7 @@ Hosted on github pages: https://alane019.github.io/new-tab-page/
 
 ##  Features ##
 
-![screenshot](https://raw.githubusercontent.com/alane019/new-tab-page/screen.jpg)
+![screenshot](https://raw.githubusercontent.com/alane019/new-tab-page/main/screen.jpg)
 
 ##  Technologies ##
 
