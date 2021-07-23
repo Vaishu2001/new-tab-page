@@ -37,7 +37,7 @@
 						</div>
 					</div>
 					<div id="fact-text" class="card-text">
-						<ul id="fact-text-ul"> </ul>
+						<d id="fact-text-div"> </div>
 					</div>
 				</div>
 			</div>
@@ -99,10 +99,17 @@
 						//make the list descending order;
 						result.reverse();
 						result.forEach((eventObject, index) => {
-							let factTextDiv = document.getElementById("fact-text-ul");
-							factTextDiv.innerHTML = factTextDiv.innerHTML + ` <li id="text-${index}">
-							<span class="li-year">${monthNum}/${dateNum}/${eventObject.year}</span>:  ${eventObject.text}   </li> `;
-							//setHistoryFact(item.year, item.text);
+							let factTextDiv = document.getElementById("fact-text-div");
+							factTextDiv.innerHTML = factTextDiv.innerHTML + `
+							<div class="card border-secondary mb-3">
+								<div class="card-header year"> ${monthNum}/${dateNum}/${eventObject.year}
+								</div>
+								<div class="card-body">
+									<div class="card-text year">
+									${eventObject.no_year_html} 
+									</div>
+								</div>
+							</div>`
 						});
 					});
 			</script>
@@ -110,14 +117,15 @@
 			<!-- CSS - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 			<style>
 				#fact-text {
-					font-weight: 400;
+					/* font-weight: 400;
 					line-height: 1.1;
-					font-size: 1rem;
+					font-size: 1rem; */
 				}
 
-				.li-year{
-					font-weight: bold;
+				.card-header .year{
+					font-weight: bold !important;
 				}
+			
 				html {
 					letter-spacing: 1.35px;
 					background: #317660;
@@ -182,14 +190,13 @@
 					box-shadow: #d6860c8d 0 0 6px 3px;
 				}
 
-				
 				#notes-label {
 					font-weight: 700 !important;
 				}
 
 				.container {
 					background-color: #05193732;
-					padding: 50px;
+					padding: 25px;
 					padding-top: 10px;
 					padding-bottom: 175px;
 				}
@@ -198,14 +205,36 @@
 					box-shadow: rgba(76, 76, 76, 0.1) 1px 1px 4px 3px !important;
 				}
 
-				li{
+				.history-event{
 					border: #00000000 solid 1px;
 					padding: 6px 3px;
 					margin: 10px 2px;
-					box-shadow: #454b364d 0 0 5px 1px;
-					background-color: #f8f2b517;
+					box-shadow: #454b364d 0 0 3px 1px;
+					background-color: #c7e1e417;
 					list-style: none;
 				}
+
+
+					/* hyperlink styling - - - - - - - - - - -  */
+					a {
+						color: rgba(19, 7, 22, 0.816);
+						font-family: helvetica;
+						text-decoration: none;
+						font-weight: semibold;
+					}
+
+					a:hover {
+						text-decoration: underline;
+					}
+
+					a:active {
+						color: black;
+					}
+
+					a:visited {
+						color: rebeccapurple;
+					}
+
 
 				/* fade-in animation  - - - - - - - - - - -  */
 				@-webkit-keyframes fadeIn {
