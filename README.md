@@ -10,10 +10,10 @@
 
 <!-- Status -->
 
-<h4 align="center" style="background-color: orange; color: black !important; text-shadow: 1px 1px 2px 1px; font-family: impact;
+<!-- <h4 align="center" style="background-color: orange; color: black !important; text-shadow: 1px 1px 2px 1px; font-family: impact;
 	letter-spacing: 1.5px;; border: black solid 1px"> 
 Work in progress
-</h4> 
+</h4>  -->
 
 <hr> 
 
@@ -39,9 +39,7 @@ Hosted on github pages: https://alane019.github.io/new-tab-page/
 
 ##  Features ##
 
-- [x]  Displays current time
-- [x]  Displays "this day in history" factoid.
-<!-- - [ ]  Enter web url to an image to display as page background. -->
+![screenshot](https://raw.githubusercontent.com/alane019/new-tab-page/screen.jpg)
 
 ##  Technologies ##
 
