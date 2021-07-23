@@ -96,7 +96,7 @@
 						return result.data.Events;
 					})
 					.then((result) => {
-						//make the list descending order;
+						//reverse list order, making it descending
 						result.reverse();
 						result.forEach((eventObject, index) => {
 							let factTextDiv = document.getElementById("fact-text-div");
