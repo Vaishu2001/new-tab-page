@@ -40,11 +40,20 @@
 						<d id="fact-text-div"> </div>
 					</div>
 				</div>
+				<br/>
+				<div class="card-body">
+					<div class="card-text year">
+					Historical facts provided by <a href="https://history.muffinlabs.com/#api" title="Muffin Labs History API" target="_blank" rel="noopener noreferrer">Muffinlabs' Today in History API service</a>. 
+					</div>
+				</div>
 			</div>
 
 			<hr />
 
-			<div id="editarea" overflow="auto" ; contenteditable="true">
+			<footer>
+	
+
+			<div id="editarea" overflow="auto" contenteditable="true">
 				<div>
 					<div id="notes-label" contenteditable="false">Notes:</div>
 					<div class="placeholder-text">
@@ -55,7 +64,7 @@
 				<div>
 					<p>&nbsp;</p>
 				</div>
-			</div>
+			</footer>
 
 			<!-- JAVASCRIPT - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 			<script>
@@ -133,17 +142,17 @@
 					background: #317660;
 					background: -webkit-linear-gradient(
 						bottom,
-						rgba(255, 227, 104, 0.77),
+						rgba(255, 227, 104, 0.65),
 						rgba(115, 174, 151, 0.55)
 					);
 					background: -moz-linear-gradient(
 						bottom,
-						rgba(255, 227, 104, 0.77),
+						rgba(255, 227, 104, 0.65),
 						rgba(115, 174, 151, 0.55)
 					);
 					background: linear-gradient(
 						to top,
-						rgba(255, 227, 104, 0.77),
+						rgba(255, 227, 104, 0.65),
 						rgba(115, 174, 151, 0.55)
 					);
 					font-family: DOS, Monaco, Menlo, Consolas, "Courier New", monospace;
@@ -161,12 +170,13 @@
 					padding: 25px;
 					background-repeat: no-repeat;
 					background-size: cover;
-					height: 2000px;
+					height: auto;
 				}
 
 				#datetime {
 					color: white !important;
 					text-shadow: #020d1e 1px 1px 3px 2px !important;
+			
 				}
 
 				#header {
@@ -177,7 +187,7 @@
 				}
 
 				hr {
-					border: #051937 solid 0.25px;
+					border: #071f44e0 solid 0.25px;
 					opacity: 0.25;
 				}
 				.placeholder-text {
@@ -197,13 +207,13 @@
 
 				.container {
 					background-color: #05193732;
-					padding: 25px;
-					padding-top: 10px;
+					padding: 40px;
+					padding-top: 30px;
 					padding-bottom: 175px;
 				}
 
 				.card {
-					box-shadow: rgba(76, 76, 76, 0.1) 1px 1px 4px 3px !important;
+					box-shadow: rgba(76, 76, 76, 0.09) 1px 1px 2px 1px !important;
 				}
 
 				.history-event{
@@ -216,12 +226,10 @@
 				}
 
 
-					/* hyperlink styling - - - - - - - - - - -  */
+				/* hyperlink styling - - - - - - - - - - -  */
 					a {
-						color: rgba(19, 7, 22, 0.816);
-						font-family: helvetica;
-						text-decoration: none;
-						font-weight: semibold;
+						color: rgb(37, 105, 201);
+						 text-decoration: none; 
 					}
 
 					a:hover {
@@ -229,7 +237,7 @@
 					}
 
 					a:active {
-						color: black;
+						color: rgb(34, 58, 214);
 					}
 
 					a:visited {
@@ -268,6 +276,66 @@
 					-webkit-animation-fill-mode: both !important;
 					animation-fill-mode: both !important;
 				}
+
+
+				/* ---------------------------------------- */
+				@media only screen and (max-device-width: 700px){
+					
+					
+					.container {
+						background-color: #0d486c3b;
+						padding: 12px;
+						margin: 2px !important;
+						padding-bottom: 175px;
+						width: 99%;
+
+					}
+
+					.body {
+						width: 99%;
+						margin: 0px;
+						padding: 2px !important;
+					}
+
+					.card border-secondary mb-3 div {
+						padding: 2px;
+						margin: 1px;
+						width: 99%;
+					}
+
+					#datetime{
+						font-size: 85%;
+						text-align: center;
+					}
+
+					html {
+						backdrop-filter: opacity(0.3) !important;
+
+						background: -webkit-linear-gradient(
+							bottom,
+							rgba(255, 227, 104, 0.54),
+							rgba(115, 174, 151, 0.55)
+						);
+						background: -moz-linear-gradient(
+							bottom,
+							rgba(255, 227, 104, 0.54),
+							rgba(115, 174, 151, 0.55)
+						);
+						background: linear-gradient(
+							to top,
+							rgba(255, 227, 104, 0.54),
+							rgba(115, 174, 151, 0.55)
+						);
+						background-repeat: no-repeat;
+						background-attachment: fixed;
+
+					}
+						
+
+				}
+
+
+
 
 			</style>
 		</div>

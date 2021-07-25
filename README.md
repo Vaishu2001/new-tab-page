@@ -35,4 +35,9 @@ This project is under license from MIT. For more details, see the [LICENSE](LICE
 
 &#xa0;
 
+##  Related topics ##
+- [IETF RFC6454 - Web Origin Concept](https://www.rfc-editor.org/rfc/rfc6454)
+- [IETF RFC6455 - WebSocket Protocol](https://www.rfc-editor.org/rfc/rfc6455)
+- [WHATWG — Standards](https://spec.whatwg.org/)
+
 <a href="#top">Back to top</a>
