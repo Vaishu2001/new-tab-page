@@ -10,7 +10,9 @@ This project is meant to be used as web browser home page or new tab page.
 
 Hosted on github pages: https://alane019.github.io/new-tab-page/
 
-![screenshot](https://raw.githubusercontent.com/alane019/new-tab-page/main/screen.jpg)
+
+<a href="https://alane019.github.io/new-tab-page/" target="_blank" rel="noopener" alt="screenshot">![screenshot](https://raw.githubusercontent.com/alane019/new-tab-page/main/screen.jpg)</a>
+
 
 ##  Technologies ##
 
