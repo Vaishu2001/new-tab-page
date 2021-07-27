@@ -81,6 +81,8 @@
 				dayNumElem.innerHTML = dateNum;
 				let dateMonthDay = `${monthNum}/${dateNum}`
 
+	
+
 				let getCurrentDateTime = () => {
 					return new Date().toLocaleString();
 				};
@@ -92,10 +94,23 @@
 				}, 1000);
 
 				let editArea = document.getElementById("editarea");
+
+
 				editArea.addEventListener("click", () => {
-					let placeHolderText = document.querySelector(".placeholder-text");
-					placeHolderText.style.display = "none";
+					if(document.querySelector(".placeholder-text")){
+						document.querySelector(".placeholder-text").style.display = "none";
+					}
+			
+					editArea.addEventListener('focusout', (event) => {
+						let editAreaContent = event.target.innerHTML; 
+						localStorage.setItem('editAreaContent', editAreaContent);
+					});
 				});
+
+				if(localStorage.getItem("editAreaContent")){
+					document.getElementById("editarea").innerHTML = localStorage.getItem('editAreaContent');
+				}
+
 
 				fetch(url)
 					.then((res) => {
